@@ -4,7 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 
 // Konfiguration
-require('dotenv').config()
+require("dotenv").config();
 
 // skapa express-applikation
 const app = express();
@@ -22,7 +22,34 @@ mongoose.connect("mongodb://localhost:27017/cv").then(() => {
     console.log("Error connecting to database: " + error);
 })
 
-// Ruotes
+// Skapa ett schema för workexperience
+const WorkexperienceSchema = new mongoose.Schema({
+    company_name: {
+        type: String,
+        required: [true, "Du måste ange en arbetsgivare."]
+        },
+    job_title: {
+        type: String,
+        required: [true, "Du måste ange en jobbtitel."]
+    },
+    start_date: {
+        type: Date,
+        required: [true, "Du måste ange ett startdatum."]
+    },
+    end_date: {
+        type: Date,
+        required: false,
+    },
+    description: {
+        type: String,
+        required: false
+    }
+});
+
+// inkludera schemat till databasen
+const Workexperience = mongoose.model("Workexperience", WorkexperienceSchema);
+
+// Routes
 app.get("/api", async (req, res) => {
     res.json({message: "Hello from my api!"});
 });
