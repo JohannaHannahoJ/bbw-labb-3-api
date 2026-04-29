@@ -3,22 +3,22 @@
 **Genomförd av joha2102**
 
 Detta projekt är en del av Laboration 3 i kursen Backend-baserad webbutveckling.
-Syftet är att skapa en REST-baserad webbtjänst som kan hantera data och kommunicera med en frontend-applikation. Del 2 av uppgiften är en frontend-applikation som finns här: ...
+Syftet är att skapa en REST-baserad webbtjänst som kan hantera data och kommunicera med en frontend-applikation. Del 2 av uppgiften är en frontend-applikation som finns här: https://github.com/JohannaHannahoJ/bbw-labb-3-frontend
 
-Den här delen av uppgiften, API-delen är skapad med NodeJS, Express och CORS (för att frontend-applikationen ska kunna göra anrop) samt databasen i MongoDB.
+Den här delen av uppgiften, API-delen är skapad med NodeJS, Express och CORS samt databasen i MongoDB.
 
 ## Om applikationen
-Applikationen hanterar arbetserfarenheter och hanterar CRUD-operationer (Create, Read, Update och Delete) mot en databas.
+Applikationen hanterar arbetserfarenheter och hanterar CRUD-operationer (Create, Read och Delete) mot en databas.
 
 Applikatioen använder även validering: 
-- Obligatoriska fält måste skickas med i POST och PUT
+- Obligatoriska fält måste skickas med i POST
 - När data saknas, visas ett felmeddelande
 - Statuskoder används
 
 ## Databas
 Projektet använder databasen MongoDB som körs via Mongoose.
 
-API:t ansluter till en lokal MongoDB-instans: mongodb://localhost:27017/cv
+API:t ansluter till en lokal MongoDB-instans: mongodb://localhost:27017/cv.
 Databasen cv skapas automatiskt vid första inmatning av en arbetslivserfarenhet via API:et.
 
 Arbetslivserfarenheterna lagras i collectionen "workexperiences". 
