@@ -8,8 +8,6 @@ require("dotenv").config();
 
 // skapa express-applikation
 const app = express();
-// portinställning
-const port = 3000;
 
 // Middlewares
 app.use(cors()); // tillåter cross-origin req
@@ -104,6 +102,6 @@ app.put("/workexperiences/:id", async (req, res) => {
 });
 
 // Starta
-app.listen(port, () => {
-    console.log("Server started on port: " + port);
+app.listen(process.env.PORT, () => {
+    console.log("Server started on port: " + process.env.PORT);
 })
