@@ -8,9 +8,33 @@ Syftet är att skapa en REST-baserad webbtjänst som kan hantera data och kommun
 Den här delen av uppgiften, API-delen är skapad med NodeJS, Express och CORS (för att frontend-applikationen ska kunna göra anrop) samt databasen i MongoDB.
 
 ## Om applikationen
-Kommer
-## Skapa databas
-Kommer
+Applikationen hanterar arbetserfarenheter och hanterar CRUD-operationer (Create, Read, Update och Delete) mot en databas.
+
+Applikatioen använder även validering: 
+- Obligatoriska fält måste skickas med i POST och PUT
+- När data saknas, visas ett felmeddelande
+- Statuskoder används
+
+## Databas
+Projektet använder databasen MongoDB som körs via Mongoose.
+
+API:t ansluter till en lokal MongoDB-instans: mongodb://localhost:27017/cv
+Databasen cv skapas automatiskt vid första inmatning av en arbetslivserfarenhet via API:et.
+
+Arbetslivserfarenheterna lagras i collectionen "workexperiences". 
+
+### Schema
+
+Varje arbetserfarenhet innehåller följande fält:
+- company_name (String, required)
+- job_title (String, required)
+- start_date (Date, required)
+- end_date (Date, optional)
+- description (String, optional)
+
+### Testdata
+Testdata kan läggas in via Thunder Client eller Bruno genom POST-anrop till: "/workexperiences".
+
 ## Installation
 
 1. Klona repositoryt  
@@ -26,6 +50,8 @@ Servern körs på:
 `http://localhost:3000`
 
 ## API Endpoints
-Kommer
-
-
+| Metod | Ändpunkt            | Beskrivning                        |
+|-------|-------------------- |------------------------------------|
+| GET   | /workexperiences    | Hämtar alla arbetserfarenheter     |
+| POST  | /workexperiences    | Lägger till en ny arbetserfarenhet |
+| DELETE| /workexperiences/:id| Tar bort en arbetserfarenhet       |
