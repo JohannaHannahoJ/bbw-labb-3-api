@@ -26,11 +26,17 @@ mongoose.connect("mongodb://localhost:27017/cv").then(() => {
 const WorkexperienceSchema = new mongoose.Schema({
     company_name: {
         type: String,
-        required: [true, "Du måste ange en arbetsgivare."]
+        required: [true, "Du måste ange en arbetsgivare."],
+        trim: true,
+        minlength: [2, "Företagsnamn måste vara minst två tecken."],
+        maxlength: [50, "Företagsnamn kan inte vara längre än 50 tecken"]
         },
     job_title: {
         type: String,
-        required: [true, "Du måste ange en jobbtitel."]
+        required: [true, "Du måste ange en jobbtitel."],
+        trim: true,
+        minlength: [2, "Jobbtitel måste vara minst två tecken."],
+        maxlength: [50, "Jobbtitel kan inte vara längre än 50 tecken"]
     },
     start_date: {
         type: Date,
@@ -42,7 +48,9 @@ const WorkexperienceSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        required: false
+        required: false,
+        trim: true,
+        maxlength: [500, "Beskrivningen får max vara 500 tecken."]
     }
 });
 
