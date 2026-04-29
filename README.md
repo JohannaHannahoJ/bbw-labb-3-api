@@ -18,7 +18,7 @@ Applikatioen använder även validering:
 ## Databas
 Projektet använder databasen MongoDB som körs via Mongoose.
 
-API:t ansluter till en lokal MongoDB-instans: mongodb://localhost:27017/cv.
+API:t ansluter till en Atlas MongoDB-databas.
 Databasen cv skapas automatiskt vid första inmatning av en arbetslivserfarenhet via API:et.
 
 Arbetslivserfarenheterna lagras i collectionen "workexperiences". 
@@ -32,9 +32,6 @@ Varje arbetserfarenhet innehåller följande fält:
 - end_date (Date, optional)
 - description (String, optional)
 
-### Testdata
-Testdata kan läggas in via Thunder Client eller Bruno genom POST-anrop till: "/workexperiences".
-
 ## Installation
 
 1. Klona repositoryt  
@@ -47,7 +44,7 @@ npm install
 `npm start`
 
 Servern körs på:
-`http://localhost:3000`
+`https://bbw-labb-3-api.onrender.com/`
 
 ## API Endpoints
 | Metod | Ändpunkt            | Beskrivning                        |
