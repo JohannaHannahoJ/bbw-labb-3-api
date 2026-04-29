@@ -16,7 +16,7 @@ app.use(cors()); // tillåter cross-origin req
 app.use(express.json()); // så att API:et kan läsa JSON i req
 
 // connect to Mongodb
-mongoose.connect("mongodb://localhost:27017/cv").then(() => {
+mongoose.connect(mongoose.connect(process.env.MONGO_URI)).then(() => {
     console.log("Connected to MongoDB");
 }).catch((error) => {
     console.log("Error connecting to database: " + error);
