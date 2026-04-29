@@ -8,10 +8,10 @@ Syftet är att skapa en REST-baserad webbtjänst som kan hantera data och kommun
 Den här delen av uppgiften, API-delen är skapad med NodeJS, Express och CORS samt databasen i MongoDB.
 
 ## Om applikationen
-Applikationen hanterar arbetserfarenheter och hanterar CRUD-operationer (Create, Read och Delete) mot en databas.
+Applikationen hanterar arbetserfarenheter och hanterar CRUD-operationer (Create, Read, Update och Delete) mot en databas.
 
 Applikatioen använder även validering: 
-- Obligatoriska fält måste skickas med i POST
+- Obligatoriska fält måste skickas med i POST och PUT
 - När data saknas, visas ett felmeddelande
 - Statuskoder används
 
@@ -55,3 +55,4 @@ Servern körs på:
 | GET   | /workexperiences    | Hämtar alla arbetserfarenheter     |
 | POST  | /workexperiences    | Lägger till en ny arbetserfarenhet |
 | DELETE| /workexperiences/:id| Tar bort en arbetserfarenhet       |
+| PUT   | /workexperiences/:id| Uppdaterar en arbetserfarenhet     |

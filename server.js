@@ -93,6 +93,15 @@ app.delete("/workexperiences/:id", async (req, res) => {
     }
 });
 
+// Route för att uppdatera erfarenhet i workexperience
+app.put("/workexperiences/:id", async (req, res) => {
+    try {
+        const result = await Workexperience.updateOne({ _id: req.params.id }, req.body);
+        return res.json(result);
+    } catch (error) {
+        return res.status(400).json(error);
+    }
+});
 
 // Starta
 app.listen(port, () => {
