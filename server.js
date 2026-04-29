@@ -54,6 +54,27 @@ app.get("/api", async (req, res) => {
     res.json({message: "Hello from my api!"});
 });
 
+// Route för att hämta arbetslivserfarenheter från api:t
+app.get("/workexperiences", async(req, res) => {
+    try {
+        let result = await Workexperience.find({});
+
+        return res.json(result);
+    } catch(error) {
+        return res.status(500).json(error);
+    }
+});
+
+// Route för att lägga till erfarenhet i workexperience
+app.post("/workexperiences", async(req, res) => {
+    try {
+        const result = await Workexperience.create(req.body);
+        return res.json(result);
+    } catch(error) {
+        return res.status(400).json(error);
+    }
+});
+
 // Starta
 app.listen(port, () => {
     console.log("Server started on port: " + port);
