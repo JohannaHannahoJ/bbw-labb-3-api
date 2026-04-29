@@ -50,7 +50,8 @@ Servern körs på:
 `http://localhost:3000`
 
 ## API Endpoints
-| Metod | Ändpunkt           | Beskrivning                        |
-|-------|--------------------|------------------------------------|
-| GET   | /workexperiences   | Hämtar alla arbetserfarenheter     |
-| POST  | /workexperiences   | Lägger till en ny arbetserfarenhet |
+| Metod | Ändpunkt            | Beskrivning                        |
+|-------|-------------------- |------------------------------------|
+| GET   | /workexperiences    | Hämtar alla arbetserfarenheter     |
+| POST  | /workexperiences    | Lägger till en ny arbetserfarenhet |
+| DELETE| /workexperiences/:id| Tar bort en arbetserfarenhet       |

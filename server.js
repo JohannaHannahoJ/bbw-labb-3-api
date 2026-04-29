@@ -75,6 +75,17 @@ app.post("/workexperiences", async(req, res) => {
     }
 });
 
+// Route för att ta bort erfarenhet i workexperience
+app.delete("/workexperiences/:id", async (req, res) => {
+    try {
+        const result = await Workexperience.deleteOne({ _id: req.params.id });
+        return res.json(result);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+});
+
+
 // Starta
 app.listen(port, () => {
     console.log("Server started on port: " + port);
